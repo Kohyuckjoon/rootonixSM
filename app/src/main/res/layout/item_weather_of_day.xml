@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="230px" android:layout_height="90px"
+    android:orientation="horizontal" android:gravity="center_vertical">
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="50px"
+        android:orientation="vertical"
+        android:layout_weight="1"
+        >
+        <TextView
+            android:id="@+id/txt_day_of_month"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="25"
+            android:textSize="20px"
+            android:textColor="#ffffff"
+            android:includeFontPadding="false"
+            android:gravity="center_vertical"
+            android:layout_toLeftOf="@id/img_weather_icon"/>
+
+        <TextView
+            android:id="@+id/txt_day_of_week"
+            android:layout_width="wrap_content"
+            android:layout_height="20px"
+            android:text="토"
+            android:textSize="20px"
+            android:textColor="#ffffff"
+            android:includeFontPadding="false"
+            android:layout_toLeftOf="@id/img_weather_icon"
+            android:layout_below="@id/txt_day_of_month"/>
+    </LinearLayout>
+    <ImageView
+        android:id="@+id/img_weather_icon"
+        android:layout_width="50px"
+        android:layout_height="50px"
+        android:src="@drawable/weather_icon_43"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="right"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/txt_temperature_min"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="10"
+            android:textSize="22px"
+            android:textColor="#33dcec"
+            />
+        <ImageView
+            android:id="@+id/txt_rain_icon"
+            android:layout_width="23px"
+            android:layout_height="27px"
+            android:src="@drawable/ic_rain_default"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="right"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/txt_temperature_max"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="-14"
+            android:textSize="22px"
+            android:textColor="#fe5656"
+            />
+        <TextView
+            android:id="@+id/txt_rain_humidity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="84"
+            android:textSize="22px"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="℃"
+            android:textSize="22px"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="％"
+            android:textSize="22px"/>
+    </LinearLayout>
+
+
+</LinearLayout>

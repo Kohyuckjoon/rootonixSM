@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".fragments.ModCompFragment">
+
+    <ImageView
+        android:id="@+id/mod_comp_background"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/mod_comp_background"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+    </ImageView>
+    <TextView
+        android:id="@+id/mod_comp_font"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="고객 정보 수정 완료"
+        app:layout_constraintStart_toStartOf="@+id/mod_comp_background"
+        app:layout_constraintEnd_toEndOf="@+id/mod_comp_background"
+        app:layout_constraintTop_toTopOf="@+id/mod_comp_background"
+        android:textColor="@color/black"
+        android:layout_marginTop="30dp"
+        android:textStyle="bold"
+        android:textSize="24sp">
+    </TextView>
+    <TextView
+        android:id="@+id/ment1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="고객 정보가 정상적으로 수정되었습니다."
+        app:layout_constraintStart_toStartOf="@+id/mod_comp_background"
+        app:layout_constraintEnd_toEndOf="@+id/mod_comp_background"
+        app:layout_constraintTop_toBottomOf="@+id/mod_comp_font"
+        android:layout_marginTop="30dp">
+    </TextView>
+    <TextView
+        android:id="@+id/ment2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="확인 버튼을 터치하시면 처음 화면으로 이동합니다."
+        app:layout_constraintStart_toStartOf="@id/mod_comp_background"
+        app:layout_constraintEnd_toEndOf="@id/mod_comp_background"
+        app:layout_constraintTop_toBottomOf="@+id/ment1"
+        android:layout_marginTop="10dp">
+    </TextView>
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/mod_comp_check"
+        app:layout_constraintStart_toStartOf="@id/mod_comp_background"
+        app:layout_constraintEnd_toEndOf="@id/mod_comp_background"
+        app:layout_constraintBottom_toBottomOf="@id/mod_comp_background"
+        android:layout_marginBottom="35dp">
+    </ImageView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

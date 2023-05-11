@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".fragments.WithdrawalCompFragment">
+
+    <ImageView
+        android:id="@+id/withdrawal_comp_background"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/withdrawal_comp_background"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+    </ImageView>
+    <TextView
+        android:id="@+id/withdrawal_comp_ment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="회원 탈퇴 완료"
+        android:textSize="22sp"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/withdrawal_comp_background"
+        app:layout_constraintEnd_toEndOf="@+id/withdrawal_comp_background"
+        app:layout_constraintTop_toTopOf="@+id/withdrawal_comp_background"
+        android:layout_marginTop="30dp">
+    </TextView>
+
+    <TextView
+        android:id="@+id/withdrawal_comp_ment1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@id/withdrawal_comp_background"
+        app:layout_constraintEnd_toEndOf="@id/withdrawal_comp_background"
+        app:layout_constraintTop_toBottomOf="@+id/withdrawal_comp_ment"
+        android:layout_marginTop="30dp"
+        android:text="회원 탈퇴가 정상적으로 수정되었습니다.">
+    </TextView>
+
+    <TextView
+        android:id="@+id/withdrawal_comp_ment2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@id/withdrawal_comp_background"
+        app:layout_constraintEnd_toEndOf="@id/withdrawal_comp_background"
+        app:layout_constraintTop_toBottomOf="@+id/withdrawal_comp_ment1"
+        android:layout_marginTop="10dp"
+        android:text="확인 버튼을 터치하시면 처음 화면으로 이동합니다.">
+    </TextView>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@id/withdrawal_comp_background"
+        app:layout_constraintEnd_toEndOf="@id/withdrawal_comp_background"
+        app:layout_constraintBottom_toBottomOf="@id/withdrawal_comp_background"
+        android:src="@drawable/withdrawal_comp_check"
+        android:layout_marginBottom="40dp">
+    </ImageView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

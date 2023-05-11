@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--측정내역보기-->
+    <string-array name="date_year">
+        <item>2021년</item>
+        <item>2022년</item>
+        <item>2023년</item>
+    </string-array>
+
+    <!--측정내역보기-->
+    <string-array name="date_month">
+        <item>01월</item>
+        <item>02월</item>
+        <item>03월</item>
+        <item>04월</item>
+        <item>05월</item>
+        <item>06월</item>
+        <item>07월</item>
+        <item>08월</item>
+        <item>09월</item>
+        <item>10월</item>
+        <item>11월</item>
+        <item>12월</item>
+    </string-array>
+</resources>

@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".fragments.UserServiceFragment"
+    android:background="@color/black"
+    android:id="@+id/user_service">
+
+    <FrameLayout
+        android:id="@+id/select_service_background"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/select_service_background">
+
+        </ImageView>
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/kuserNameTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@+id/select_service_background"
+        app:layout_constraintTop_toTopOf="@+id/select_service_background"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="25dp">
+
+        <TextView
+            android:id="@+id/kuser_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:textSize="25sp"
+            android:text="test">
+        </TextView>
+
+    </FrameLayout>
+    <FrameLayout
+        android:id="@+id/kuserTelTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/kuserNameTitle"
+        app:layout_constraintStart_toStartOf="@+id/kuserNameTitle"
+        android:layout_marginTop="5dp">
+
+        <TextView
+            android:id="@+id/kuser_tel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/darker_gray"
+            android:textSize="20sp"
+            android:text="010-****-1234">
+        </TextView>
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/contour1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@+id/kuserTelTitle"
+        app:layout_constraintTop_toTopOf="@+id/kuserTelTitle"
+        android:layout_marginLeft="5dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/darker_gray"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:text=" | ">
+        </TextView>
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/kuserBirthDateTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@+id/contour1"
+        app:layout_constraintTop_toTopOf="@+id/contour1"
+        android:layout_marginLeft="5dp">
+
+        <TextView
+            android:id="@+id/kuser_birth_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/darker_gray"
+            android:textSize="20sp"
+            android:text="66세">
+        </TextView>
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/contour2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@+id/kuserBirthDateTitle"
+        app:layout_constraintTop_toTopOf="@+id/kuserBirthDateTitle"
+        android:layout_marginLeft="5dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/darker_gray"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:text=" | ">
+        </TextView>
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/kuserSexTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@+id/contour2"
+        app:layout_constraintTop_toTopOf="@+id/contour2"
+        android:layout_marginLeft="5dp">
+
+        <TextView
+            android:id="@+id/kuser_sex"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/darker_gray"
+            android:textSize="20sp"
+            android:text="성별">
+        </TextView>
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/service_select"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/service_title"
+        android:layout_marginBottom="80dp">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/service_select"
+            android:layout_gravity="center">
+        </ImageView>
+    </FrameLayout>
+    <FrameLayout
+        android:id="@+id/service_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:ignore="MissingConstraints">
+        <ImageView
+            android:id="@+id/service_logout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="630dp"
+            android:layout_marginRight="110dp"
+            android:src="@drawable/service_logout">
+        </ImageView>
+    </FrameLayout>
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:ignore="MissingConstraints">
+        <ImageView
+            android:id="@+id/changing_information_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="630dp"
+            android:layout_marginRight="190dp"
+            android:src="@drawable/changing_information_icon">
+        </ImageView>
+    </FrameLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/service_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="100dp">
+
+        <ImageView
+            android:id="@+id/measure"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/measure"
+            tools:ignore="MissingConstraints">
+        </ImageView>
+
+        <ImageView
+            android:id="@+id/measurement_details"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            app:layout_constraintStart_toEndOf="@+id/measure"
+            app:layout_constraintTop_toTopOf="@+id/measure"
+            android:src="@drawable/measurement_details">
+        </ImageView>
+
+        <ImageView
+            android:id="@+id/management_method2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            app:layout_constraintStart_toEndOf="@+id/measurement_details"
+            app:layout_constraintTop_toTopOf="@+id/measurement_details"
+            android:src="@drawable/management_method2">
+        </ImageView>
+
+        <ImageView
+            android:id="@+id/suggestion2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@+id/management_method2"
+            app:layout_constraintTop_toTopOf="@+id/management_method2"
+            android:layout_marginLeft="30dp"
+            android:src="@drawable/suggestion2">
+        </ImageView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

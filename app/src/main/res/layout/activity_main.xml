@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.MainActivity"
+    android:background="@android:color/black">
+
+<!--    <LinearLayout-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        tools:ignore="MissingConstraints">-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/idtv_ph"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content">-->
+<!--        </TextView>-->
+<!--        <TextView-->
+<!--            android:id="@+id/idtv_rc"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content">-->
+<!--        </TextView>-->
+<!--        <TextView-->
+<!--            android:id="@+id/idtv_ntu"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content">-->
+<!--        </TextView>-->
+<!--        <TextView-->
+<!--            android:id="@+id/idpb_ph"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content">-->
+<!--        </TextView>-->
+<!--        <TextView-->
+<!--            android:id="@+id/idpb_rc"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content">-->
+<!--        </TextView>-->
+<!--        <TextView-->
+<!--            android:id="@+id/idpb_ntu"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content">-->
+<!--        </TextView>-->
+<!--        <TextView-->
+<!--            android:id="@+id/idtv_ph_stat"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content">-->
+<!--        </TextView>-->
+<!--        <TextView-->
+<!--            android:id="@+id/idtv_rc_stat"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content">-->
+<!--        </TextView>-->
+<!--        <TextView-->
+<!--            android:id="@+id/idtv_ntu_stat"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content">-->
+<!--        </TextView>-->
+<!--        <TextView-->
+<!--            android:id="@+id/idtv_mascot"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content">-->
+<!--        </TextView>-->
+<!--        <TextView-->
+<!--            android:id="@+id/idiv_mascot"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content">-->
+<!--        </TextView>-->
+
+<!--    </LinearLayout>-->
+
+    <FrameLayout
+        android:id="@+id/fl_main"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:ignore="MissingConstraints">
+    </FrameLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        tools:ignore="MissingConstraints">
+
+        <ImageView
+            android:id="@+id/mainIMG"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@drawable/topmarkerimg3"
+            android:padding="25dp"
+            tools:ignore="MissingConstraints" />
+
+<!--        <TextClock-->
+<!--            android:id="@+id/textClock"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:paddingStart="10dp"-->
+<!--            android:layout_marginTop="30dp"-->
+<!--            android:padding="25dp"-->
+<!--            android:layout_marginLeft="25dp"-->
+<!--            android:format12Hour="yyyy.MM.dd"-->
+<!--            android:format24Hour="yyyy.MM.dd"-->
+<!--            android:text="2022.10.17"-->
+<!--            android:textColor="@color/white"-->
+<!--            android:textSize="40sp"-->
+<!--            app:layout_constraintStart_toStartOf="parent"/>-->
+
+        <ImageView
+            android:id="@+id/iv_ampm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@+id/tv_day_of_week"
+            app:layout_constraintTop_toTopOf="@+id/tv_date"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_date"
+            android:layout_marginLeft="15dp"
+            android:src="@drawable/am"/>
+
+<!--        <ImageView-->
+<!--            android:id="@+id/iv_pm"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginTop="5dp"-->
+<!--            android:layout_marginLeft="5dp"-->
+<!--            android:layout_gravity="center"-->
+<!--            android:paddingLeft="300dp"-->
+<!--            android:paddingTop="100dp"-->
+<!--            android:src="@drawable/pm_off"/>-->
+
+        <TextView
+            android:id="@+id/tv_day_of_week"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/spoqa_han_sans_neo_regular"
+            android:textColor="@color/white"
+            android:textSize="30sp"
+            android:gravity="bottom"
+            app:layout_constraintStart_toEndOf="@+id/tv_date"
+            app:layout_constraintTop_toTopOf="@+id/tv_date"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_date"
+            android:text="월요일"/>
+
+        <TextClock
+            android:id="@+id/tv_clock"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/spoqa_han_sans_neo_regular"
+            app:layout_constraintStart_toEndOf="@+id/iv_ampm"
+            android:textSize="40sp"
+            app:layout_constraintTop_toTopOf="@id/iv_ampm"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_ampm"
+            android:layout_marginLeft="20dp"
+            android:text="09:38"
+            android:textColor="@color/white"
+            android:format12Hour="hh:mm" />
+
+        <ImageView
+            android:id="@+id/iv_weather"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginRight="30dp"
+            android:src="@drawable/weather_sunny_background_dark"
+            app:layout_constraintTop_toTopOf="@+id/tv_weather_text"
+            app:layout_constraintEnd_toStartOf="@+id/tv_weather_text"/>
+
+        <TextView
+            android:id="@+id/tv_weather_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toStartOf="@+id/tv_temp_status_main"
+            app:layout_constraintTop_toTopOf="@+id/tv_temp_status_main"
+            android:layout_marginRight="30dp"
+            android:text="Sunny"
+            android:textSize="35sp"
+            android:textColor="@color/white">
+
+        </TextView>
+
+        <TextView
+            android:id="@+id/tv_temp_status_main"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="28"
+            android:textColor="@color/white"
+            android:textSize="35sp"
+            app:layout_constraintTop_toTopOf="@+id/temptext"
+            app:layout_constraintEnd_toStartOf="@+id/temptext"
+            android:height="60sp"></TextView>
+
+        <TextView
+            android:id="@+id/temptext"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=" ℃"
+            app:layout_constraintEnd_toEndOf="@+id/mainIMG"
+            app:layout_constraintTop_toTopOf="@+id/mainIMG"
+            android:layout_marginRight="30dp"
+            android:textColor="@color/white"
+            android:textSize="35sp"
+            android:layout_marginTop="30dp">
+
+        </TextView>
+
+        <TextView
+            android:id="@+id/tv_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/spoqa_han_sans_neo_regular"
+            android:padding="25dp"
+            android:layout_marginLeft="30dp"
+            android:paddingStart="10dp"
+            android:text="2020.11.02"
+            android:textColor="@color/white"
+            android:textSize="40sp"
+            app:layout_constraintStart_toStartOf="@+id/mainIMG"
+            app:layout_constraintTop_toTopOf="@+id/mainIMG"
+            tools:layout_editor_absoluteX="25dp"
+            tools:layout_editor_absoluteY="0dp" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <LinearLayout
+        android:id="@+id/footer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="30dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent">
+
+        <ImageView
+            android:id="@+id/mirror_mode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/mirror_mode"/>
+
+        <ImageView
+            android:id="@+id/smart_mode_on"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:background="@drawable/smart_mode_on"/>
+
+        <ImageView
+            android:id="@+id/care_mode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:background="@drawable/care_mode"/>
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

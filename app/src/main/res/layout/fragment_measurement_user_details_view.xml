@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".MeasurementUserDetailsView"
+    android:id="@+id/user_details_list">
+
+    <ImageView
+        android:id="@+id/user_details_background"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:src="@drawable/user_details_background">
+    </ImageView>
+
+    <TextView
+        android:id="@+id/kanalyzed_idx"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="@+id/user_details_background"
+        app:layout_constraintTop_toTopOf="@+id/user_details_background"
+        android:layout_margin="10dp"
+        android:text="순번"
+        android:textColor="@color/white">
+    </TextView>
+
+    <TextView
+        android:id="@+id/analyzed_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="2022.10.10"
+        android:textColor="@color/black"
+        android:textSize="27sp"
+        app:layout_constraintStart_toStartOf="@id/user_details_background"
+        app:layout_constraintTop_toTopOf="@+id/user_details_background"
+        app:layout_constraintEnd_toEndOf="@+id/user_details_background"
+        android:layout_marginTop="25dp">
+    </TextView>
+
+    <TextView
+        android:id="@+id/analyzed_day_week"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="20dp"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toStartOf="@+id/analyzed_date"
+        app:layout_constraintTop_toBottomOf="@+id/analyzed_date"
+        android:text="수요일">
+    </TextView>
+
+    <TextView
+        android:id="@+id/analyzed_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@+id/analyzed_day_week"
+        app:layout_constraintTop_toTopOf="@+id/analyzed_day_week"
+        app:layout_constraintEnd_toEndOf="@+id/analyzed_date"
+        android:text="18:00"
+        android:textColor="@color/black">
+    </TextView>
+
+    <TextView
+        android:id="@+id/total_pt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@+id/analyzed_date"
+        app:layout_constraintEnd_toEndOf="@+id/analyzed_date"
+        app:layout_constraintTop_toBottomOf="@+id/analyzed_date"
+        android:layout_marginTop="60dp"
+        android:textSize="50sp"
+        android:textColor="@color/black"
+        android:text="80">
+    </TextView>
+
+    <!--각질-->
+    <LinearLayout
+        android:layout_width="218dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@+id/total_pt"
+        app:layout_constraintStart_toStartOf="@+id/user_details_background"
+        android:layout_marginTop="105dp"
+        android:layout_marginLeft="32dp">
+
+        <ProgressBar
+            android:id="@+id/dead_skin_pt"
+            android:max="20"
+            android:progress="15"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/Widget.AppCompat.ProgressBar.Horizontal">
+        </ProgressBar>
+    </LinearLayout>
+    <TextView
+        android:id="@+id/dead_skin_pt_p"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@+id/total_pt"
+        app:layout_constraintTop_toBottomOf="@+id/total_pt"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="18dp"
+        android:textColor="@color/black"
+        android:text="10">
+    </TextView>
+
+    <!--민감도-->
+    <LinearLayout
+        android:layout_width="218dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@+id/total_pt"
+        app:layout_constraintStart_toStartOf="@+id/user_details_background"
+        android:layout_marginTop="155dp"
+        android:layout_marginLeft="32dp">
+
+        <ProgressBar
+            android:id="@+id/sensitivity_pt"
+            android:max="20"
+            android:progress="70"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/Widget.AppCompat.ProgressBar.Horizontal">
+        </ProgressBar>
+    </LinearLayout>
+    <TextView
+        android:id="@+id/sensitivity_pt_p"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@+id/total_pt"
+        app:layout_constraintTop_toBottomOf="@+id/total_pt"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="65dp"
+        android:textColor="@color/black"
+        android:text="10">
+    </TextView>
+
+    <!--모발 두께-->
+    <LinearLayout
+        android:layout_width="218dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@+id/total_pt"
+        app:layout_constraintStart_toStartOf="@+id/user_details_background"
+        android:layout_marginTop="200dp"
+        android:layout_marginLeft="32dp">
+
+        <ProgressBar
+            android:id="@+id/hair_thick_pt"
+            android:max="20"
+            android:progress="11"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/Widget.AppCompat.ProgressBar.Horizontal">
+        </ProgressBar>
+    </LinearLayout>
+    <TextView
+        android:id="@+id/hair_thick_pt_p"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@+id/total_pt"
+        app:layout_constraintTop_toBottomOf="@+id/total_pt"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="112dp"
+        android:textColor="@color/black"
+        android:text="10">
+    </TextView>
+
+    <LinearLayout
+        android:layout_width="218dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@+id/total_pt"
+        app:layout_constraintStart_toStartOf="@+id/user_details_background"
+        android:layout_marginTop="246dp"
+        android:layout_marginLeft="32dp">
+
+        <ProgressBar
+            android:id="@+id/sebum_pt"
+            android:max="20"
+            android:progress="70"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/Widget.AppCompat.ProgressBar.Horizontal">
+        </ProgressBar>
+    </LinearLayout>
+    <TextView
+        android:id="@+id/sebum_pt_p"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@+id/total_pt"
+        app:layout_constraintTop_toBottomOf="@+id/total_pt"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="159dp"
+        android:textColor="@color/black"
+        android:text="10">
+    </TextView>
+
+    <!--모발수-->
+    <LinearLayout
+        android:layout_width="218dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@+id/total_pt"
+        app:layout_constraintStart_toStartOf="@+id/user_details_background"
+        android:layout_marginTop="295dp"
+        android:layout_marginLeft="32dp">
+
+        <ProgressBar
+            android:id="@+id/hair_num_pt"
+            android:max="20"
+            android:progress="19"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/Widget.AppCompat.ProgressBar.Horizontal">
+        </ProgressBar>
+    </LinearLayout>
+    <TextView
+        android:id="@+id/hair_num_pt_p"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@+id/total_pt"
+        app:layout_constraintTop_toBottomOf="@+id/total_pt"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="206dp"
+        android:textColor="@color/black"
+        android:text="10">
+    </TextView>
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

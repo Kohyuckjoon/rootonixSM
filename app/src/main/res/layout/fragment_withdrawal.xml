@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".fragments.WithdrawalFragment">
+
+    <ImageView
+        android:id="@+id/withdrawal_background"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/withdrawal_background"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+    </ImageView>
+
+    <TextView
+        android:id="@+id/withdrawal_ment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="회원 탈퇴를 하시겠습니까?"
+        android:textSize="22sp"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/withdrawal_background"
+        app:layout_constraintEnd_toEndOf="@+id/withdrawal_background"
+        app:layout_constraintTop_toTopOf="@+id/withdrawal_background"
+        android:layout_marginTop="30dp">
+    </TextView>
+
+    <TextView
+        android:id="@+id/withdrawal_ment1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@id/withdrawal_background"
+        app:layout_constraintEnd_toEndOf="@id/withdrawal_background"
+        app:layout_constraintTop_toBottomOf="@+id/withdrawal_ment"
+        android:layout_marginTop="30dp"
+        android:text="회원 탈퇴하시면 현재까지 누적된">
+    </TextView>
+
+    <TextView
+        android:id="@+id/withdrawal_ment2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@id/withdrawal_background"
+        app:layout_constraintEnd_toEndOf="@id/withdrawal_background"
+        app:layout_constraintTop_toBottomOf="@+id/withdrawal_ment"
+        android:layout_marginTop="55dp"
+        android:text="모든 데이터가 삭제되어 복구될 수 없습니다.">
+    </TextView>
+
+    <TextView
+        android:id="@+id/withdrawal_ment3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@id/withdrawal_background"
+        app:layout_constraintEnd_toEndOf="@id/withdrawal_background"
+        app:layout_constraintTop_toBottomOf="@+id/withdrawal_ment"
+        android:layout_marginTop="80dp"
+        android:text="회원 탈퇴하시려면 탈퇴 버튼을 터치하세요.">
+    </TextView>
+
+    <ImageView
+        android:id="@+id/withdrawal_cancel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/withdrawal_cancel"
+        app:layout_constraintStart_toStartOf="@id/withdrawal_background"
+        app:layout_constraintBottom_toBottomOf="@id/withdrawal_background"
+        android:layout_marginLeft="55dp"
+        android:layout_marginBottom="40dp">
+    </ImageView>
+    <ImageView
+        android:id="@+id/withdrawal_check"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="@id/withdrawal_background"
+        app:layout_constraintBottom_toBottomOf="@id/withdrawal_background"
+        android:layout_marginRight="55dp"
+        android:layout_marginBottom="40dp"
+        android:src="@drawable/withdrawal_check">
+    </ImageView>
+</androidx.constraintlayout.widget.ConstraintLayout>

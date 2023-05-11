@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".dialog.FragDlgVideoFragment">
+
+<!--    <LinearLayout-->
+<!--        android:id="@+id/analysis_video"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent">-->
+
+<!--        <VideoView-->
+<!--            android:id="@+id/analysisVideoView"-->
+<!--            android:layout_width="1200dp"-->
+<!--            android:layout_height="700dp">-->
+<!--        </VideoView>-->
+<!--    </LinearLayout>-->
+
+    <VideoView
+        android:id="@+id/analysisVideoView"
+        android:layout_width="1900dp"
+        android:layout_height="1050dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+    </VideoView>
+    <TextView
+        android:id="@+id/text_top"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="250dp"
+        android:text="지금 Headspa7의 빅데이터 프로그램을 활용해 AI 진단 시스템이 가동되고 있습니다."
+        android:textSize="40sp"
+        android:textColor="@color/white"
+        android:textStyle="bold">
+    </TextView>
+
+    <TextView
+        android:id="@+id/text_middle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@+id/text_top"
+        app:layout_constraintEnd_toEndOf="@+id/text_top"
+        app:layout_constraintTop_toBottomOf="@+id/text_top"
+        android:layout_marginTop="100dp"
+        android:text="두피케어 전문가들의 의견이 담긴 정확한 두피 진단과 최적의 솔루션이 잠시 후 제공됩니다."
+        android:textSize="30sp"
+        android:textColor="@color/white">
+    </TextView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
