@@ -28,6 +28,7 @@ import com.planuri.rootonixsmartmirror.model.kioskuser.LoginKioskUser;
 import com.planuri.rootonixsmartmirror.model.kioskuser.ScalpAnalysisData;
 import com.planuri.rootonixsmartmirror.model.kioskuser.TelSearchUserItem;
 import com.planuri.rootonixsmartmirror.util.CustomRestClient;
+import com.planuri.rootonixsmartmirror.util.Utils;
 import com.planuri.rootonixsmartmirror.util.api.RestApiInterface;
 
 import java.text.SimpleDateFormat;
@@ -148,20 +149,11 @@ public class MeasurementUserDetailsFragment extends Fragment {
             kuserName.setText(LoginKioskUser.getInstance().getKioskUser().kuserName.substring(0, 1) + "*" + " 님");
         }
 
-        /** 전화번호 뿌려주기*/
+        /** 전화번호 및 나이 */
         kuserTel.setText(LoginKioskUser.getInstance().getKioskUser().kuserTel.substring(0,3) + "-" + "****" + "-" +
                 LoginKioskUser.getInstance().getKioskUser().kuserTel.substring(7,11));
+        kuserBirthDate.setText(Utils.calculateAge(LoginKioskUser.getInstance().getKioskUser().kuserBirthDate));
 
-        /**
-         * 생년월일 받아온 값 -> 나이로 변환해주기
-         * */
-        if (LoginKioskUser.getInstance().getKioskUser().kuserBirthDate != null){
-
-            int kuserBirth = Integer.parseInt(LoginKioskUser.getInstance().getKioskUser().kuserBirthDate.substring(0,4));
-            String birthdayToAge = String.valueOf(Calendar.getInstance().get(Calendar.YEAR) - kuserBirth);
-
-            kuserBirthDate.setText(birthdayToAge + "세");
-        }
 
         /**
          * 측정 내역 보기

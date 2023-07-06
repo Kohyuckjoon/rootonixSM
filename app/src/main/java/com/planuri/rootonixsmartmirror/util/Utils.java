@@ -6,8 +6,8 @@ import android.net.NetworkInfo;
 
 import androidx.annotation.NonNull;
 
-import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
 
@@ -32,6 +32,32 @@ public class Utils {
         ConnectivityManager cm = (ConnectivityManager)cxt.getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo ni = cm.getActiveNetworkInfo();
         return ni!= null && ni.isConnected();
+    }
+
+    public static String calculateAge(String birthdateStr) {
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+        Date birthdate = null;
+        try {
+            birthdate = sdf.parse(birthdateStr);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        if (birthdate == null) {
+            return "NULL";
+        }
+
+        Calendar birthdateCalendar = Calendar.getInstance();
+        birthdateCalendar.setTime(birthdate);
+        Calendar today = Calendar.getInstance();
+
+        int age = today.get(Calendar.YEAR) - birthdateCalendar.get(Calendar.YEAR);
+
+        if (today.get(Calendar.DAY_OF_YEAR) < birthdateCalendar.get(Calendar.DAY_OF_YEAR)) {
+            age--;
+        }
+
+        return String.valueOf(age);
     }
 
 

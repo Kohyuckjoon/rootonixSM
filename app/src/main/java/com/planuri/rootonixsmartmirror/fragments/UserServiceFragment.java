@@ -26,6 +26,7 @@ import com.planuri.rootonixsmartmirror.model.kioskuser.KioskUser;
 import com.planuri.rootonixsmartmirror.model.kioskuser.LoginKioskUser;
 import com.planuri.rootonixsmartmirror.model.kioskuser.TelSearchUserItem;
 import com.planuri.rootonixsmartmirror.util.CustomRestClient;
+import com.planuri.rootonixsmartmirror.util.Utils;
 import com.planuri.rootonixsmartmirror.util.api.RestApiInterface;
 
 import org.w3c.dom.Text;
@@ -111,22 +112,10 @@ public class UserServiceFragment extends BaseFragment {
             kuserName.setText(LoginKioskUser.getInstance().getKioskUser().kuserName.substring(0, 1) + "*" + " 님");
         }
 
+        /** 전화번호 및 나이 */
         kuserTel.setText(LoginKioskUser.getInstance().getKioskUser().kuserTel.substring(0,3) + "-" + "****" + "-" +
                 LoginKioskUser.getInstance().getKioskUser().kuserTel.substring(7,11));
-        /**
-         * 왼쪽 상단 유저 기본 정보 표시해주기
-         * 생년월일 받아온 값 -> 나이로 변환해주기
-         * */
-        if (LoginKioskUser.getInstance().getKioskUser().kuserBirthDate != null){
-
-            Calendar current = Calendar.getInstance();
-            int currentYear = current.get(Calendar.YEAR);
-
-            int kuserBirth = Integer.parseInt(LoginKioskUser.getInstance().getKioskUser().kuserBirthDate.substring(0,4));
-            int result = currentYear - kuserBirth;
-
-            kuserBirthDate.setText(Integer.toString(result) + "세");
-        }
+        kuserBirthDate.setText(Utils.calculateAge(LoginKioskUser.getInstance().getKioskUser().kuserBirthDate));
 
         /**
          * 서비스 선택 화면

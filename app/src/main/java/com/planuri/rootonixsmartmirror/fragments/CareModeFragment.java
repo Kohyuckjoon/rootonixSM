@@ -36,6 +36,7 @@ import com.planuri.rootonixsmartmirror.model.kioskuser.LoginKioskUser;
 import com.planuri.rootonixsmartmirror.model.kioskuser.TelSearchUserItem;
 import com.planuri.rootonixsmartmirror.service.DateService;
 import com.planuri.rootonixsmartmirror.util.CustomRestClient;
+import com.planuri.rootonixsmartmirror.util.Utils;
 import com.planuri.rootonixsmartmirror.util.api.RestApiInterface;
 
 import java.util.Calendar;
@@ -278,10 +279,7 @@ public class CareModeFragment extends BaseFragment {
                                  * 생년월일 받아온 값 -> 나이로 변환해주기
                                 * */
                                 if (usersDto.success = true){
-                                    int kuserBirthDate = Integer.parseInt(usersDto.list.get(i).kuserBirthDate.substring(0,4));
-                                    int result = currentYear - kuserBirthDate;
-
-                                    searchItem.kuserBirthDate  = Integer.toString(result) + "세";
+                                    searchItem.kuserBirthDate = Utils.calculateAge(usersDto.list.get(i).kuserBirthDate) + "세";
                                 }
                                 adapter.addItem(searchItem);
                             }
