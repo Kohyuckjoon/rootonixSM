@@ -63,6 +63,7 @@ import com.planuri.rootonixsmartmirror.dto.ResScalpAnalysisDto;
 import com.planuri.rootonixsmartmirror.model.kioskuser.AnalysisImgInfo;
 import com.planuri.rootonixsmartmirror.model.kioskuser.LoginKioskUser;
 import com.planuri.rootonixsmartmirror.util.CustomRestClient;
+import com.planuri.rootonixsmartmirror.util.Utils;
 import com.planuri.rootonixsmartmirror.util.retrofit.ScalpAnalysisRetrofit;
 
 import java.io.ByteArrayOutputStream;
@@ -317,6 +318,7 @@ public class MeasurementFragment extends BaseFragment {
                             else {  /** 분석 성공 **/
                                 // LoginKioskUser 에 분석 정보 저장
                                 LoginKioskUser.getInstance().setAnalysisData(resData.result);
+                                LoginKioskUser.getInstance().getAnalysisData().total.analyzedDate = Utils.getCurrentDateTime();
 
                                 /** 분석 성공이므로 API 서버에 분석 데이터 저장 요청 */
                                 ReqSaveAnalysisDto reqSaveAnalysisDto = new ReqSaveAnalysisDto();

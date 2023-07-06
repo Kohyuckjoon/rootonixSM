@@ -6,13 +6,21 @@ import android.net.NetworkInfo;
 
 import androidx.annotation.NonNull;
 
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Locale;
 
 public class Utils {
     static public String getFormattedDate(@NonNull String format, Date date) {
         SimpleDateFormat fmt = new SimpleDateFormat(format);
         return fmt.format(date);
+    }
+
+    public static String getCurrentDateTime() {
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.getDefault());
+        Date date = new Date();
+        return dateFormat.format(date);
     }
 
     public static void threadSleep(int i) {

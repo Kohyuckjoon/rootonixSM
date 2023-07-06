@@ -29,5 +29,6 @@ public class KioskAnalysisDetail {
     /** "탈모가 의심되고 예민한 두피로 판단됩니다. 모낭 당 모발 수..." */
     public String totalDesc;
 
-    /** example: 76.2, 종합 점수 */
+    /** 분석 날짜, example = "2022-09-01 13:42:33") */
+    public String analyzedDate;
 }

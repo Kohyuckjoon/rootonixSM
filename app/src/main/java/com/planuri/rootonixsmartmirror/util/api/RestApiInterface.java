@@ -43,9 +43,9 @@ public interface RestApiInterface {
     @POST("kiosk/register")
     Call<CommonResponse> RegisterUser(@Body RegKioskUserDto regKioskUserDto);
 
-    /** 스마트미러 측정 내역 yearMonth = 2022-11 형식 */
+    /** 스마트미러 측정 내역 year = 2022 형식 */
     @GET("kiosk/kuser/{kuserIdx}/analysis-history")
-    Call<ResAnalysisHistoryDto> getAnalysisHistory(@Path("kuserIdx") String kuserIdx, @Query("yearMonth") String yearMonth);
+    Call<ResAnalysisHistoryDto> getAnalysisHistory(@Path("kuserIdx") long kuserIdx, @Query("year") String year);
 
     /** 분석결과 저장 요청 */
     @POST("kiosk/kuser/{kuserIdx}/analysis")

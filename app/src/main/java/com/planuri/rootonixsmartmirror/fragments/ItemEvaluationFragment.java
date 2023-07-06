@@ -91,6 +91,8 @@ public class ItemEvaluationFragment extends BaseFragment implements View.OnClick
     private ProgressBar mBarSebumBefore;
     private ProgressBar mBarNumHairsBefore;
 
+    private TextView tv_eval_date;
+
     public ItemEvaluationFragment() {}
 
     /**
@@ -314,6 +316,12 @@ public class ItemEvaluationFragment extends BaseFragment implements View.OnClick
                 ((MainActivity)getActivity()).fragmentView(16);
             }
         });
+
+        /** 분석 날짜 */
+        tv_eval_date = view.findViewById(R.id.tv_eval_date);
+        if(mAnalysisData.total.analyzedDate != null && mAnalysisData.total.analyzedDate.length() > 3) {
+            tv_eval_date.setText(mAnalysisData.total.analyzedDate.substring(0, mAnalysisData.total.analyzedDate.length() - 3));
+        }
 
         /** 이미지 저장된 URL 로 분석 이미지 가져오기 */
         // 이미지 다운로드 클래스 생성 및 리스너 작성

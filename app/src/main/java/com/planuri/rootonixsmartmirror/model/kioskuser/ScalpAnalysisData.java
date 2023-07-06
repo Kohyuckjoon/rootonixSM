@@ -21,5 +21,6 @@ public class ScalpAnalysisData {
         public String total_explain;
         public String expert_suggest;
         public List<String> expert_list = new ArrayList<String>();
+        public String analyzedDate;
     }
 }

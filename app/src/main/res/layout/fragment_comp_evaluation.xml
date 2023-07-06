@@ -12,11 +12,11 @@
         android:id="@+id/comp_evaluation_background"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="parent"
+        android:src="@drawable/comp_evaluation_background"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:src="@drawable/comp_evaluation_background">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
     </ImageView>
 
     <FrameLayout
@@ -209,80 +209,117 @@
             android:src="@drawable/measurement_select_service">
         </ImageView>
     </FrameLayout>
-
-<!--    <ImageView-->
-<!--        android:id="@+id/trouble_scalp_font"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:src="@drawable/trouble_scalp_font"-->
-<!--        app:layout_constraintTop_toTopOf="@+id/comp_evaluation_background"-->
-<!--        app:layout_constraintStart_toStartOf="@+id/comp_evaluation_background"-->
-<!--        app:layout_constraintEnd_toEndOf="@+id/comp_evaluation_background"-->
-<!--        android:layout_marginTop="130dp">-->
-<!--    </ImageView>-->
-
-    <TextView
-        android:id="@+id/trouble_scalp_font"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="약한 트러블 탈모 두피"
-        android:textStyle="bold"
-        android:textSize="20sp"
-        android:textColor="@color/white"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/scalp_text_layout"
+        android:layout_width="440dp"
+        android:layout_height="80dp"
         app:layout_constraintTop_toTopOf="@+id/comp_evaluation_background"
-        app:layout_constraintStart_toStartOf="@+id/comp_evaluation_background"
-        app:layout_constraintEnd_toEndOf="@+id/comp_evaluation_background"
+        app:layout_constraintStart_toEndOf="@+id/comp_evaluation_contents"
+        app:layout_constraintEnd_toStartOf="@+id/comp_evaluation_contents_expert"
         android:layout_marginTop="130dp">
-    </TextView>
 
-<!--    <ImageView-->
-<!--        android:id="@+id/comp_evaluation_scalp"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        app:layout_constraintTop_toTopOf="@+id/trouble_scalp_font"-->
-<!--        android:layout_marginTop="40dp"-->
-<!--        app:layout_constraintStart_toStartOf="@+id/comp_evaluation_background"-->
-<!--        app:layout_constraintEnd_toEndOf="@+id/comp_evaluation_background"-->
-<!--        android:src="@drawable/comp_evaluation_scalp_re">-->
-<!--    </ImageView>-->
+        <TextView
+            android:id="@+id/tv_scalp_front_head"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="홍*동 님은"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:gravity="right"
+            android:layout_marginRight="5dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/trouble_scalp_font"
+            app:layout_constraintBaseline_toBaselineOf="@+id/trouble_scalp_font"/>
+
+        <TextView
+            android:id="@+id/trouble_scalp_font"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="두피 유형"
+            android:textColor="@color/white"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            app:layout_constraintStart_toEndOf="@id/tv_scalp_front_head"
+            app:layout_constraintEnd_toStartOf="@id/tv_scalp_front_tail"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintWidth_default="wrap"
+            app:layout_constraintWidth_max="320dp"
+            />
+
+        <TextView
+            android:id="@+id/tv_scalp_front_tail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="입니다."
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:gravity="left"
+            android:layout_marginLeft="5dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/trouble_scalp_font"
+            app:layout_constraintBaseline_toBaselineOf="@+id/trouble_scalp_font"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
     <ImageView
-        android:id="@+id/comp_evaluation_scalp"
+        android:id="@+id/iv_radar_chart_big"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/trouble_scalp_font"
-        android:layout_marginTop="20dp"
-        app:layout_constraintStart_toStartOf="@+id/comp_evaluation_background"
-        app:layout_constraintEnd_toEndOf="@+id/comp_evaluation_background"
-        android:src="@drawable/pore_blank">
+        android:layout_marginTop="40dp"
+        android:background="@drawable/bg_radar_white_b"
+        app:layout_constraintEnd_toStartOf="@+id/comp_evaluation_contents_expert"
+        app:layout_constraintStart_toEndOf="@+id/comp_evaluation_contents"
+        app:layout_constraintTop_toBottomOf="@+id/scalp_text_layout">
     </ImageView>
+    <LinearLayout
+        android:id="@+id/scalp_type_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/iv_radar_chart_big"
+        app:layout_constraintStart_toEndOf="@+id/comp_evaluation_contents"
+        app:layout_constraintEnd_toStartOf="@+id/comp_evaluation_contents_expert"
+        android:orientation="horizontal"
+        android:layout_marginTop="45dp">
+        <TextView
+            android:id="@+id/tv_scalp_type_head"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="step"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:layout_marginLeft="10dp"/>
+        <TextView
+            android:id="@+id/tv_scalp_type_code"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="두피 타입"
+            android:textStyle="bold"
+            android:textSize="30sp"
+            android:layout_marginLeft="6dp"
+            android:layout_marginRight="6dp"
+            android:textColor="#5E72E9">
+        </TextView>
+        <TextView
+            android:id="@+id/tv_scalp_type_tail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="유형"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:layout_marginRight="10dp"/>
+    </LinearLayout>
     <ImageView
-        android:id="@+id/pore_total"
+        android:id="@+id/iv_product_recommend"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="@+id/comp_evaluation_scalp"
-        app:layout_constraintEnd_toEndOf="@+id/comp_evaluation_scalp"
-        app:layout_constraintTop_toTopOf="@+id/comp_evaluation_scalp"
-        app:layout_constraintBottom_toBottomOf="@+id/comp_evaluation_scalp"
-        android:layout_marginBottom="45dp"
-        android:src="@drawable/pore_20">
-
+        android:src="@drawable/btn_product_recommend"
+        app:layout_constraintTop_toBottomOf="@+id/scalp_type_layout"
+        app:layout_constraintEnd_toStartOf="@+id/comp_evaluation_contents_expert"
+        app:layout_constraintStart_toEndOf="@+id/comp_evaluation_contents"
+        android:layout_marginTop="30dp">
     </ImageView>
-
-    <TextView
-        android:id="@+id/score"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="@+id/pore_total"
-        app:layout_constraintEnd_toEndOf="@+id/pore_total"
-        app:layout_constraintTop_toTopOf="@+id/comp_evaluation_scalp"
-        app:layout_constraintBottom_toBottomOf="@+id/comp_evaluation_scalp"
-        android:layout_marginTop="70dp"
-        android:layout_marginRight="5dp"
-        android:text="0"
-        android:textSize="45sp"
-        android:textColor="@color/white">
-
-    </TextView>
 
     <ImageView
         android:id="@+id/comp_evaluation_contents"
@@ -292,12 +329,12 @@
         android:layout_marginLeft="50dp"
         app:layout_constraintTop_toTopOf="@+id/comp_evaluation_background"
         app:layout_constraintStart_toStartOf="@+id/comp_evaluation_background"
-        android:src="@drawable/comp_evaluation_contents">
+        android:src="@drawable/comp_evaluation_contents_444">
     </ImageView>
-
     <ScrollView
+        android:id="@+id/total_desc_scroll"
         android:layout_width="500dp"
-        android:layout_height="460dp"
+        android:layout_height="370dp"
         app:layout_constraintStart_toStartOf="@+id/comp_evaluation_contents"
         app:layout_constraintTop_toTopOf="@+id/comp_evaluation_contents"
         android:layout_marginLeft="20dp"
@@ -314,6 +351,39 @@
             android:textSize="18sp">
         </TextView>
     </ScrollView>
+    <LinearLayout
+        android:id="@+id/medical_advisor_text_layout"
+        android:layout_width="550dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/comp_evaluation_contents"
+        app:layout_constraintStart_toStartOf="@+id/comp_evaluation_background"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="20dp"
+        android:orientation="vertical"
+        >
+        <TextView
+            android:id="@+id/tv_medical_advisor_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:layout_marginLeft="5dp"
+            android:textStyle="bold"
+            android:text="메디컬 어드바이저"/>
+        <TextView
+            android:id="@+id/tv_medical_advisor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="50dp"
+            android:lineSpacingExtra="10sp"
+            android:background="@color/black"
+            android:text="&quot;상기 종합평가 의견은 다수의 전문의들이 직접 보고 판단한 데이터를 기반으로 생성된 인공지능 분석 결과 내용입니다.&quot;\n
+※ 본 A.I 알고리즘은 ROOTONIX 특허 출원 되었으며 법적으로 보호받고 있습니다."/>
+    </LinearLayout>
 
     <ImageView
         android:id="@+id/comp_evaluation_contents_expert"
@@ -402,143 +472,4 @@
             android:textSize="18sp">
         </TextView>
     </ScrollView>
-
-    <TextView
-        android:id="@+id/oil"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="@+id/comp_evaluation_scalp"
-        app:layout_constraintTop_toBottomOf="@+id/comp_evaluation_scalp"
-        android:layout_marginTop="20dp"
-        android:layout_marginLeft="20dp"
-        android:text="항목"
-        android:textSize="16dp"
-        android:textColor="@color/white"
-        >
-    </TextView>
-    <ImageView
-        android:id="@+id/oil_icon"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/oil"
-        app:layout_constraintStart_toStartOf="@+id/comp_evaluation_scalp"
-        android:layout_marginTop="15dp"
-        android:src="@drawable/oil_icon">
-    </ImageView>
-
-    <ImageView
-        android:id="@+id/first_val"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/oil_icon"
-        app:layout_constraintStart_toStartOf="@+id/oil_icon"
-        app:layout_constraintEnd_toEndOf="@+id/oil_icon"
-        android:layout_marginTop="15dp"
-        android:src="@drawable/bad">
-    </ImageView>
-
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintStart_toEndOf="@+id/oil"
-        app:layout_constraintEnd_toStartOf="@+id/corneous"
-        app:layout_constraintTop_toTopOf="@id/oil"
-        android:src="@drawable/contour5">
-    </ImageView>
-
-    <TextView
-        android:id="@+id/corneous"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="@+id/comp_evaluation_scalp"
-        app:layout_constraintTop_toBottomOf="@+id/comp_evaluation_scalp"
-        app:layout_constraintEnd_toEndOf="@+id/comp_evaluation_scalp"
-        android:layout_marginTop="20dp"
-        android:text="항목"
-        android:textSize="16dp"
-        android:textColor="@color/white">
-    </TextView>
-    <ImageView
-        android:id="@+id/corneous_icon"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/corneous"
-        app:layout_constraintStart_toStartOf="@+id/comp_evaluation_scalp"
-        app:layout_constraintEnd_toEndOf="@+id/comp_evaluation_scalp"
-        android:layout_marginTop="15dp"
-        android:src="@drawable/corneous_icon">
-    </ImageView>
-    <ImageView
-        android:id="@+id/second_val"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/corneous_icon"
-        app:layout_constraintStart_toStartOf="@+id/corneous_icon"
-        app:layout_constraintEnd_toEndOf="@+id/corneous_icon"
-        android:layout_marginTop="15dp"
-        android:src="@drawable/caution">
-    </ImageView>
-    <ImageView
-        android:id="@+id/corneous2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintStart_toEndOf="@+id/corneous"
-        app:layout_constraintEnd_toStartOf="@+id/responsiveness"
-        app:layout_constraintTop_toTopOf="@id/corneous"
-        android:src="@drawable/contour5">
-
-    </ImageView>
-
-    <TextView
-        android:id="@+id/responsiveness"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/comp_evaluation_scalp"
-        app:layout_constraintEnd_toEndOf="@+id/comp_evaluation_scalp"
-        android:layout_marginTop="20dp"
-        android:layout_marginRight="20dp"
-        android:text="항목"
-        android:textSize="16dp"
-        android:textColor="@color/white">
-    </TextView>
-    <ImageView
-        android:id="@+id/responsiveness_icon"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/responsiveness"
-        app:layout_constraintEnd_toEndOf="@+id/comp_evaluation_scalp"
-        android:layout_marginTop="15dp"
-        android:src="@drawable/responsiveness_icon">
-    </ImageView>
-    <ImageView
-        android:id="@+id/third_val"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/responsiveness_icon"
-        app:layout_constraintStart_toStartOf="@+id/responsiveness_icon"
-        app:layout_constraintEnd_toEndOf="@+id/responsiveness_icon"
-        android:layout_marginTop="15dp"
-        android:src="@drawable/usually">
-    </ImageView>
-
-    <ImageView
-        android:id="@+id/management"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/comp_evaluation_scalp"
-        app:layout_constraintStart_toStartOf="@+id/comp_evaluation_scalp"
-        android:layout_marginTop="210dp"
-        android:src="@drawable/management">
-    </ImageView>
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintStart_toEndOf="@+id/management"
-        app:layout_constraintBottom_toBottomOf="@+id/management"
-        android:layout_marginLeft="5dp"
-        android:src="@drawable/evaluation_suggestion">
-    </ImageView>
-
-
-
 </androidx.constraintlayout.widget.ConstraintLayout>

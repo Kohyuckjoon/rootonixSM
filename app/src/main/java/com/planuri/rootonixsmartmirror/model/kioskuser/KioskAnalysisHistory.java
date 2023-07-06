@@ -19,6 +19,9 @@ public class KioskAnalysisHistory {
     /** example: 76.2, 종합 점수 */
     public int totalPt;
 
+    /** example = "지루성 두피", 진단명) */
+    public String diagnosisName;
+
     /** example: 2022-09-01 13:42:33, 분석 날짜 **/
     public String analyzedDate;
 //    public String analyzedDayWeek;
