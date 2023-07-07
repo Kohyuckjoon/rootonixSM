@@ -127,7 +127,7 @@ public class MeasurementUserAdapter extends RecyclerView.Adapter<MeasurementUser
             float diameter = 113.0f;
             float offsetX = 2f;
             float offsetY = 5.0f;
-            ivRadarChart.setRadarAttribute(new RadarChartDrawer.RadarAttribute(diameter, 0f, "#5E72E9")); // 한 번만 설정
+            ivRadarChart.setRadarAttribute(new RadarChartDrawer.RadarAttribute(diameter, 0f, Color.parseColor("#5E72E9"))); // 한 번만 설정
             ivRadarChart.setOffsetPoint(new RadarChartDrawer.OffsetPoint(offsetX, offsetY)); // 한 번만 설정
 
             /** ViewHolder item 클릭 이벤트 */

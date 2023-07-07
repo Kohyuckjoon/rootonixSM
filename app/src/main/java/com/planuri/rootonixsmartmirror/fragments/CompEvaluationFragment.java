@@ -2,6 +2,7 @@ package com.planuri.rootonixsmartmirror.fragments;
 
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
+import android.graphics.Color;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -28,6 +29,8 @@ import com.planuri.rootonixsmartmirror.model.kioskuser.ScalpAnalysisData;
 import com.planuri.rootonixsmartmirror.util.Const;
 import com.planuri.rootonixsmartmirror.util.Util;
 import com.planuri.rootonixsmartmirror.util.Utils;
+import com.planuri.rootonixsmartmirror.util.graphic.AnimatedRadarChartDrawer;
+import com.planuri.rootonixsmartmirror.util.graphic.AnimatedRadarChartImageView;
 import com.planuri.rootonixsmartmirror.util.graphic.RadarChartDrawer;
 
 import org.w3c.dom.Text;
@@ -68,7 +71,7 @@ public class CompEvaluationFragment extends BaseFragment {
     ScrollView totalDescScroll;   //종합평가 텍스트뷰의 스크롤뷰
 
     /** 레이더 차트 관련 */
-    private ImageView iv_radar_chart_big;
+    private AnimatedRadarChartImageView iv_radar_chart_big;
 
     //추천제품 버튼
     private ImageView iv_product_recommend;
@@ -219,7 +222,7 @@ public class CompEvaluationFragment extends BaseFragment {
             }
         });
 
-        iv_radar_chart_big = view.findViewById(R.id.iv_radar_chart_big);
+        iv_radar_chart_big = (AnimatedRadarChartImageView)view.findViewById(R.id.iv_radar_chart_big);
 
         iv_radar_chart_big.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
             @Override
@@ -249,10 +252,9 @@ public class CompEvaluationFragment extends BaseFragment {
                 /** RadarChartDrawer.RadarAttribute 의 diameter 값을 조절하여 레이더 차트의 크기 설정, vertexRadius 로 꼭지점 반지름 크기 설정, vertexColor 로 꼭지점 색 설정
                  * RadarChartDrawer.OffsetPoint 의 x 를 이용해서 중심 x좌표 이동, y를 이용해서 중심 y좌표 이동
                  */
-                RadarChartDrawer.drawRadarChart(canvas, scores, new RadarChartDrawer.RadarAttribute(232.0f, 0f, "#5E72E9"),
+                iv_radar_chart_big.setChartData(scores, new RadarChartDrawer.RadarAttribute(232.0f, 3f, Color.parseColor("#FFFFFF")),
                         new RadarChartDrawer.OffsetPoint(6.5f, 9.5f));
-
-                iv_radar_chart_big.setImageBitmap(bitmap);
+                iv_radar_chart_big.startAnimation();
             }
         });
 

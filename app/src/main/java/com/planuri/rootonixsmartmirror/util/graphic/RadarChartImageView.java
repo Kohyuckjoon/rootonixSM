@@ -14,24 +14,25 @@ import com.planuri.rootonixsmartmirror.R;
 
 import java.util.ArrayList;
 
-/**
- * TODO: document your custom view class.
- */
 public class RadarChartImageView extends androidx.appcompat.widget.AppCompatImageView {
     private ArrayList<Integer> scores = new ArrayList<>();
     private RadarChartDrawer.RadarAttribute radarAttribute;
     private RadarChartDrawer.OffsetPoint offsetPoint;
+    private RadarChartDrawer radarChartDrawer;
 
     public RadarChartImageView(Context context) {
         super(context);
+        this.radarChartDrawer = new RadarChartDrawer();
     }
 
     public RadarChartImageView(Context context, AttributeSet attrs) {
         super(context, attrs);
+        this.radarChartDrawer = new RadarChartDrawer();
     }
 
     public RadarChartImageView(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
+        this.radarChartDrawer = new RadarChartDrawer();
     }
 
     public void setScores(ArrayList<Integer> scores) {
@@ -52,7 +53,7 @@ public class RadarChartImageView extends androidx.appcompat.widget.AppCompatImag
         super.onDraw(canvas);
 
         if (scores != null && scores.size() > 0 && radarAttribute != null && offsetPoint != null) {
-            RadarChartDrawer.drawRadarChart(canvas, scores, radarAttribute, offsetPoint);
+            radarChartDrawer.drawRadarChart(canvas, scores, radarAttribute, offsetPoint);
         }
     }
 }
