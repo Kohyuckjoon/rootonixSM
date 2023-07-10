@@ -39,8 +39,8 @@ public class Const {
 
     public enum ScalpType {
         H0("H0", new String[]{}),
-        H1("H1", new String[]{"모낭염"}),
-        H2("H2", new String[]{"민감성", "염증성", "농포성"}),
+        H1("H1", new String[]{"모낭염", "병원"}),
+        H2("H2", new String[]{"민감성", "예민한", "염증성", "농포성"}),
         H3("H3", new String[]{"비듬성"}),
         H4("H4", new String[]{"지성", "지루성"}),
         H5("H5", new String[]{"건성", "아토피성"}),

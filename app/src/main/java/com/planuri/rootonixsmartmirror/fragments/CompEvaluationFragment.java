@@ -295,10 +295,10 @@ public class CompEvaluationFragment extends BaseFragment {
                         }
                     });
 
-                    typingDelayHandler.postDelayed(this, 50);
+                    typingDelayHandler.postDelayed(this, 40);
                 }
             }
-        }, 50);
+        }, 40);
     }
 
     private void stopTyping() {

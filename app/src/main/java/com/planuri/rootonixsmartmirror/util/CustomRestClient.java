@@ -20,8 +20,8 @@ public class CustomRestClient {
 
     private static final String TAG = CustomRestClient.class.getSimpleName();
 
-//    private static final String BASE_URL = "http://api.rootonix.com:8080/";
-    private static final String BASE_URL = "http://1.226.26.68:8080/";  //For Test
+    private static final String BASE_URL = "http://api.rootonix.com:8080/";
+//    private static final String BASE_URL = "http://1.226.26.68:8080/";  //For Test
     private static CustomRestClient INSTANCE;
 
     private Retrofit retrofit;
